@@ -1,4 +1,4 @@
-# Assignment 1.2.1 - Array Higher Order Methods
+# Array Higher Order Methods
 - [Reminders](#reminders)
   - [Asking ChatGPT for Help](#asking-chatgpt-for-help)
   - [Be Okay With Being "Provisionally Complete"](#be-okay-with-being-provisionally-complete)
