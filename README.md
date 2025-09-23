@@ -1,4 +1,8 @@
 # Assignment 1.2.1 - Array Higher Order Methods
+- [Reminders](#reminders)
+  - [Asking ChatGPT for Help](#asking-chatgpt-for-help)
+  - [Be Okay With Being "Provisionally Complete"](#be-okay-with-being-provisionally-complete)
+- [Setup](#setup)
 - [Before You Start](#before-you-start)
 - [From Scratch](#from-scratch)
   - [Question 1: getUserById — find](#question-1-getuserbyid--find)
@@ -22,6 +26,50 @@
   - [Question 18: sortUsersByName](#question-18-sortusersbyname)
 - [Modify](#modify)
 
+
+## Reminders
+
+### Asking ChatGPT for Help
+
+If you’re stuck, you may use ChatGPT to clarify the assignment — but not to solve it for you. To do this, copy the meta-prompt below into ChatGPT along with the assignment question.
+
+> You are acting as a tutor. Your job is to explain what this coding question is asking, clarify confusing wording, and highlight the relevant concepts students need to know — but do not provide the full solution or code that directly answers the question. Instead, focus on rephrasing the problem in simpler terms, identifying what’s being tested, and suggesting what steps or thought processes might help. Ask guiding questions to ensure the student is thinking critically. Do not write the final function, algorithm, or code implementation.
+
+Be mindful of your AI usage on assignments. AI can be a great tool to help your learning but it can also be detrimental if you let it do too much of the thinking for you.
+
+### Be Okay With Being "Provisionally Complete"
+
+At Marcy, we will deem an assignment as "complete" if the solution passes at least **75%** of the automated tests. 
+
+However, we know many of you will feel the urge to hold off on submitting until your assignment feels 100% perfect. That drive for excellence is an asset!
+
+But perfectionism can also get in the way of learning — especially when we need to cover a lot in a short amount of time.
+
+That’s why we encourage you to be comfortable with being **“provisionally complete.”** This means:
+
+- Submitting your work even if it isn’t perfect yet
+- Treating submission as a checkpoint, not a finish line
+- Committing to return, revise, and improve later
+
+Learning to move forward with provisional completeness will help you make steady progress while still building the habit of continuous improvement.
+
+## Setup
+
+For guidance on setting up and submitting this assignment, refer to the Marcy lab School Docs How-To guide for [Working with Short Response and Coding Assignments](https://marcylabschool.gitbook.io/marcy-lab-school-docs/how-tos/working-with-assignments#how-to-work-on-assignments).
+
+Here are some useful commands to remember.
+
+```sh
+npm i                   # install dependencies
+git checkout -b draft   # switch to the draft branch before starting
+
+npm test # run the automated tests
+npm run test:w # run the automated tests and rerun them each time you save a change
+
+git add -A              # add a changed file to the staging area
+git commit -m 'message' # create a commit with the changes
+git push                # push the new commit to the remote repo
+```
 
 ## Before You Start
 This assignment is all about training you to recognize the types of situations that will call for specific array methods. **DO NOT USE ANY LOOPS HERE**. Loops can obviously be used in the real world, but we want you to recognize when an array method would be more readable/handy.
