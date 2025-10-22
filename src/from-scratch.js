@@ -1,63 +1,40 @@
-// find
-const getUserById = () => { };
+// For all of the following problems, use an array higher order method to solve the problem.
+// You should not use any for or while loops!
 
-// findIndex
-const getIndexOfApple = () => { };
+const getStringLengths = (strings) => {
 
-// reduce
-const getSquaredTotal = () => { };
+};
 
-// every
-const hasOnlyEvenNumbers = () => { };
+const getEvenNumbers = (mixedNums) => {
 
-// some
-const anyGreaterThan10 = () => { };
+};
 
-// Use your judgement to decide which array method to use!
-const roundAll = () => { };
+const getEvenSquares = (nums) => {
 
-const onlyStrings = () => { };
+};
 
-const stringsToLength = () => { };
+const getActiveUsersUnder30 = (users) => {
 
-const totalGreaterThanGiven = () => { };
+};
 
-const numberOfLongWords = () => { };
+const getTotalScore = (users) => {
 
-const numberOfCharacters = () => { };
+};
 
-const removeJerkFromCompany = () => { };
+const getFirstHighScorer = (users) => {
 
-const chosenCoordinates = () => { };
+};
 
-// Sorting Functions
-const sortWords = () => { };
+const findUserById3 = (users) => {
 
-const sortNumbers = () => { };
-
-const sortNumbersBetter = () => { };
-
-const sortUsersByOrder = () => { };
-
-const sortUsersByName = () => { };
+};
 
 module.exports = {
-  getUserById,
-  getSquaredTotal,
-  hasOnlyEvenNumbers,
-  getIndexOfApple,
-  numberOfCharacters,
-  anyGreaterThan10,
-  roundAll,
-  removeJerkFromCompany,
-  onlyStrings,
-  chosenCoordinates,
-  stringsToLength,
-  totalGreaterThanGiven,
-  numberOfLongWords,
-  sortWords,
-  sortNumbers,
-  sortNumbersBetter,
-  sortUsersByOrder,
-  sortUsersByName,
+  getStringLengths,
+  getEvenNumbers,
+  getEvenSquares,
+  getActiveUsersUnder30,
+  getTotalScore,
+  getFirstHighScorer,
+  findUserById3,
 };

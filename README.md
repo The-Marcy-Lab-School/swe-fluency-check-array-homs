@@ -1,362 +1,144 @@
 # Array Higher Order Methods
-- [Reminders](#reminders)
-  - [Asking ChatGPT for Help](#asking-chatgpt-for-help)
-  - [Be Okay With Being "Provisionally Complete"](#be-okay-with-being-provisionally-complete)
+
+For all of the following problems, use an array higher order method to solve the problem. You should not use any for or while loops!
+
+**Table of Contents**
 - [Setup](#setup)
-- [Before You Start](#before-you-start)
-- [From Scratch](#from-scratch)
-  - [Question 1: getUserById — find](#question-1-getuserbyid--find)
-  - [Question 2: getIndexOfApple — findIndex](#question-2-getindexofapple--findindex)
-  - [Question 3: getSquaredTotal — reduce](#question-3-getsquaredtotal--reduce)
-  - [Question 4: hasOnlyEvenNumbers — every](#question-4-hasonlyevennumbers--every)
-  - [Question 5: anyGreaterThan10 — some](#question-5-anygreaterthan10--some)
-  - [Question 6: roundAll](#question-6-roundall)
-  - [Question 7: onlyStrings](#question-7-onlystrings)
-  - [Question 8: stringsToLength](#question-8-stringstolength)
-  - [Question 9: totalGreaterThanGiven](#question-9-totalgreaterthangiven)
-  - [Question 10: numberOfLongWords](#question-10-numberoflongwords)
-  - [Question 11: numberOfCharacters](#question-11-numberofcharacters)
-  - [Question 12: removeJerkFromCompany](#question-12-removejerkfromcompany)
-  - [Question 13: chosenCoordinates](#question-13-chosencoordinates)
-- [From Scratch Sorting Functions](#from-scratch-sorting-functions)
-  - [Question 14: sortWords](#question-14-sortwords)
-  - [Question 15: sortNumbers](#question-15-sortnumbers)
-  - [Question 16: sortNumbersBetter](#question-16-sortnumbersbetter)
-  - [Question 17: sortUsersByOrder](#question-17-sortusersbyorder)
-  - [Question 18: sortUsersByName](#question-18-sortusersbyname)
-- [Modify](#modify)
-
-
-## Reminders
-
-### Asking ChatGPT for Help
-
-If you’re stuck, you may use ChatGPT to clarify the assignment — but not to solve it for you. To do this, copy the meta-prompt below into ChatGPT along with the assignment question.
-
-> You are acting as a tutor. Your job is to explain what this coding question is asking, clarify confusing wording, and highlight the relevant concepts students need to know — but do not provide the full solution or code that directly answers the question. Instead, focus on rephrasing the problem in simpler terms, identifying what’s being tested, and suggesting what steps or thought processes might help. Ask guiding questions to ensure the student is thinking critically. Do not write the final function, algorithm, or code implementation.
-
-Be mindful of your AI usage on assignments. AI can be a great tool to help your learning but it can also be detrimental if you let it do too much of the thinking for you.
-
-### Be Okay With Being "Provisionally Complete"
-
-At Marcy, we will deem an assignment as "complete" if the solution passes at least **75%** of the automated tests. 
-
-However, we know many of you will feel the urge to hold off on submitting until your assignment feels 100% perfect. That drive for excellence is an asset!
-
-But perfectionism can also get in the way of learning — especially when we need to cover a lot in a short amount of time.
-
-That’s why we encourage you to be comfortable with being **“provisionally complete.”** This means:
-
-- Submitting your work even if it isn’t perfect yet
-- Treating submission as a checkpoint, not a finish line
-- Committing to return, revise, and improve later
-
-Learning to move forward with provisional completeness will help you make steady progress while still building the habit of continuous improvement.
+- [Easy Problems](#easy-problems)
+  - [Problem 1](#problem-1)
+  - [Problem 2](#problem-2)
+  - [Problem 3](#problem-3)
+- [Medium Problems](#medium-problems)
+  - [Problem 4](#problem-4)
+  - [Problem 5](#problem-5)
+  - [Problem 6](#problem-6)
+- [Bonus Problem](#bonus-problem)
 
 ## Setup
 
-For guidance on setting up and submitting this assignment, refer to the Marcy lab School Docs How-To guide for [Working with Short Response and Coding Assignments](https://marcylabschool.gitbook.io/marcy-lab-school-docs/how-tos/working-with-assignments#how-to-work-on-assignments).
-
-Here are some useful commands to remember.
+Install dependencies
 
 ```sh
-npm i                   # install dependencies
-git checkout -b draft   # switch to the draft branch before starting
-
-npm test # run the automated tests
-npm run test:w # run the automated tests and rerun them each time you save a change
-
-git add -A              # add a changed file to the staging area
-git commit -m 'message' # create a commit with the changes
-git push                # push the new commit to the remote repo
+npm i
 ```
 
-## Before You Start
-This assignment is all about training you to recognize the types of situations that will call for specific array methods. **DO NOT USE ANY LOOPS HERE**. Loops can obviously be used in the real world, but we want you to recognize when an array method would be more readable/handy.
+Run tests
 
-Every question should be answered with one of the following array methods:
-* `array.forEach`
-* `array.filter`
-* `array.map`
-* `array.find`
-* `array.findIndex`
-* `array.reduce`
-* `array.every`
-* `array.some`
+```sh
+npm t
+```
 
-Some might even require more methods that you learned last week (like splice or push). But this assignment is all about building familiarity with the array methods. Fluency is the goal here.
+After each problem, commit your progress and push to GitHub (main branch is fine!)
 
-Challenge yourself by seeing if you can implement these in one or two lines using chaining.
+```sh
+git add -A
+git commit -m "finished problem X"
+git push
+```
 
-## From Scratch
+## Easy Problems
 
-_**REMEMBER: NOT A SINGLE LOOP SHOULD BE USED IN THIS ASSIGNMENT. ONLY ARRAY METHODS.**_
+### Problem 1 
 
-For the first few, we'll give you a hint. For the last few, you'll need to figure it out on your own!
+Return an array of the lengths of each string in the given array.
+Do not modify the original array.
 
-### Question 1: getUserById — find
-Given an array of user objects and a number representing an "id", return the object with the given `id` property. If an object isn't found, return `undefined`.
+Usage Examples:
 
-`find` is the best choice here because we want to return the first value in the array that matches a particular criteria.
-
-**Usage Example:**  
 ```js
-const users = [
-  { id: 1, name: "Alice" },
-  { id: 2, name: "Bob" }
-];
-
-getUserById(users, 2);
-// → { id: 2, name: "Bob" }
-
-getUserById(users, 3);
-// → undefined
+getStringLengths(['apple', 'banana', 'cherry']); // → [5, 6, 6]
+getStringLengths(['abc', 'de', 'fghi']); // → [3, 2, 4]
+getStringLengths(['']); // → [0]
 ```
 
-### Question 2: getIndexOfApple — findIndex
-Given an array of food objects, return the number index of the food item with a `name` of "apple". If it is not found, return `-1`.
+### Problem 2
 
-`findIndex` is the best choice here because we want to return the index of the first value in the array that matches a particular criteria (and not the value itself).
-
-**Usage Example:**  
-```js
-const foods = [
-  { name: "banana" },
-  { name: "apple" },
-  { name: "orange" }
-];
-
-getIndexOfApple(foods);
-// → 1
-
-getIndexOfApple([{ name: "pear" }]);
-// → -1
-```
-
-### Question 3: getSquaredTotal — reduce
-Given an array of numbers, return the sum of all the numbers squared. Meaning, square each number before adding it to the total.
+Return an array of only the even numbers from the given array of numbers.
 
 Do not modify the original array.
 
-`reduce` is the best choice here because we want to return a single value that we generate through the process of looking at every value in the array. You _could_ use `forEach` as well with a `sum` variable but `reduce` is more elegant.
+Usage Examples:
 
-**Usage Example:**  
 ```js
-getSquaredTotal([1, 2, 3]);
-// → 14 (1*1 + 2*2 + 3*3)
+getEvenNumbers([1, 2, 3, 4, 5, 6]); // → [2, 4, 6]
+getEvenNumbers([1, 3, 5]); // → []
 ```
 
 
-### Question 4: hasOnlyEvenNumbers — every
-Given an array of numbers, return `true` if every number is even, otherwise return `false`.
+### Problem 3
+
+Return an array of the squares of only the even numbers from the given array of numbers.
 
 Do not modify the original array.
 
-**Usage Example:**  
+Usage Examples:
 ```js
-hasOnlyEvenNumbers([2, 4, 6]);
-// → true
-
-hasOnlyEvenNumbers([2, 3, 4]);
-// → false
+getEvenSquares([1, 2, 3, 4]); // → [4, 16]
+getEvenSquares([1, 3, 5]); // → []
 ```
 
-### Question 5: anyGreaterThan10 — some
+## Medium Problems
 
-Given an array of numbers, return `true` if any of the numbers are greater than 10. Otherwise, return `false`.
-
+For the following problems, you will be given an array of `user` objects.
+Each user object has the following properties: id, name, age, isActive, and score.
 Do not modify the original array.
 
-**Usage Example:**  
-```js
-anyGreaterThan10([1, 5, 7, 12]);
-// → true
-
-anyGreaterThan10([1, 2, 3]);
-// → false
-```
-### Question 6: roundAll
-
-**For the remaining questions, you must identify which array method to use!**
-
-Given an array of numbers, return a new array where every number is rounded to the nearest integer.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-roundAll([1.2, 3.5, 4.8]);
-// → [1, 4, 5]
-```
-
-### Question 7: onlyStrings
-Given an array of values, return a new array where only strings are kept.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-onlyStrings([1, "hello", true, "world"]);
-// → ["hello", "world"]
-```
-
-### Question 8: stringsToLength
-Given an array of strings, return a new array where each string is replaced by its length.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-stringsToLength(["apple", "hi", "banana"]);
-// → [5, 2, 6]
-```
-
-### Question 9: totalGreaterThanGiven
-Given an array of numbers and a number, return `true` if the sum of the array is greater than the given number. Otherwise, return `false`.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-totalGreaterThanGiven([1, 2, 3], 5);
-// → true  (sum is 6)
-
-totalGreaterThanGiven([1, 1, 1], 5);
-// → false (sum is 3)
-```
-
-### Question 10: numberOfLongWords
-Given an array of words, return the number of words that are longer than 4 characters. If no words are longer than 4 characters, return 0.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-numberOfLongWords(["hi", "hello", "world", "js"]);
-// → 2  ("hello" and "world")
-
-numberOfLongWords(["cat", "dog"]);
-// → 0
-```
-
-### Question 11: numberOfCharacters
-Given a string return an object with the count of each character in the string. All characters must be tracked, even spaces. Meaning, don't skip over spaces. Be sure to check the tests on this one to make sure you're getting the right object output.
-
-**Usage Example:**  
-```js
-numberOfCharacters("hello world");
-// → { h: 1, e: 1, l: 3, o: 2, " ": 1, w: 1, r: 1, d: 1 }
-```
-
-### Question 12: removeJerkFromCompany
-Given an array of people objects, mutate it so that the person with the `personality` property of "jerk" is removed from the array. Return nothing.
-
-**Usage Example:**  
-```js
-const company = [
-  { name: "Alice", personality: "nice" },
-  { name: "Bob", personality: "jerk" }
-];
-
-removeJerkFromCompany(company);
-
-console.log(company);
-// → [ { name: "Alice", personality: "nice" } ]
-```
-
-### Question 13: chosenCoordinates
-
-Given an array of coordinate arrays and a number, select the first coordinate pair that adds up to the specified number. Return `undefined` if no pair adds up to the number.
-
-Do not modify the original array.
-
-**Usage Example:**  
-```js
-chosenCoordinates([[1, 2], [3, 7], [4, 5]], 10);
-// → [3, 7]
-
-chosenCoordinates([[1, 2], [2, 2]], 10);
-// → undefined
-```
-
-## From Scratch Sorting Functions
-
-Let's switch it up. Let's work with a built in HOF (`array.sort`) and pass in (or not pass in) the callbacks ourselves!
-
-### Question 14: sortWords
-`sortWords` takes in an array of words and must sort them in ascending order (remember: ascend => start small get big, descending => start big get small). For the purposes of letters, ascending alphabetical means start with "a." You must return the new sorted array.
-
-Do not modify the passed in array! Be careful, is that `.sort`'s default behavior?
-
-**Usage Example**
-
-```js
-const unsortedNames = ['Charlie', 'Debbie', 'Alice', 'Bob'];
-const sortedNames = sortWords(unsortedNames);
-
-console.log(sortedNames); // ['Alice', 'Bob', 'Charlie', 'Debbie']
-console.log(unsortedNames); // ['Charlie', 'Debbie', 'Alice', 'Bob']
-```
-
-### Question 15: sortNumbers
-`sortNumbers` takes in an array of numbers and returns an array with the numbers sorted in ascending order. Do not modify the original array!
-
-**Usage Example**
-
-```js
-const unsortedNums = [1, 100, 14, 3, 2, 11];
-const sortedNums = sortNumbers(unsortedNums);
-
-console.log(sortedNums); // [1, 2, 3, 11, 14, 100]
-console.log(unsortedNums); // [1, 100, 14, 3, 2, 11]
-```
-
-### Question 16: sortNumbersBetter
-`sortNumbersBetter` is just like the above function, but now we can pass in a second boolean argument, `isDescending`. It will determine if we want to sort in ascending or descending order. If the second argument is `true`, sort descending. If the second argument is `false`, sort ascending (this is the default behavior). Do not modify the original array!
-
-**Usage Example**
-
-```js
-const unsortedNums = [1, 100, 14, 3, 2, 11];
-const bigToSmall = sortNumbersBetter(unsortedNums, true);
-console.log(bigToSmall); // [100, 14, 11, 3, 2, 1]
-
-const smallToBig = sortNumbersBetter(unsortedNums); // default param
-console.log(smallToBig); // [1, 2, 3, 11, 14, 100]
-```
-
-### Question 17: sortUsersByOrder
-Let's make something a little more interesting. Now instead of sorting primitives, let's sort an array of objects! You will do this a bunch in the real world, often data is more complex than simple primitives can convey. But let's start simple! You'll have to sort an array of users that look like this:
-
-```js
-const users = [ { name: 'Alice', order: 1 }, /* .. */ ];
-```
-
-You must sort them by the `order` property, always ascending. Do not modify the original array!
+Example:
 
 ```js
 const users = [
-  { name: 'Alice', order: 1 },
-  { name: 'Bob', order: 3 },
-  { name: 'Charlie', order: 2 },
-  { name: 'Debbie', order: 4 },
+  { id: 1, name: 'Alice', age: 25, isActive: true, score: 85 },
+  { id: 2, name: 'Bob', age: 32, isActive: false, score: 92 },
+  { id: 3, name: 'Charlie', age: 28, isActive: true, score: 78 },
+  { id: 4, name: 'Diana', age: 35, isActive: true, score: 95 },
+  { id: 5, name: 'Edward', age: 19, isActive: false, score: 88 }
 ];
+```
 
-const sortedUsers = sortUsersByOrder(users);
-console.log(sortedUsers);
-// [
-//   { name: 'Alice', order: 1 },
-//   { name: 'Charlie', order: 2 },
-//   { name: 'Bob', order: 3 },
-//   { name: 'Debbie', order: 4 },
+### Problem 4
+
+Return an array of users who are active and under 30. Do not modify the original array.
+
+Usage Examples:
+
+```js
+getActiveUsersUnder30(users);
+// returns [
+//   { id: 1, name: 'Alice', age: 25, isActive: true, score: 85 },
+//   { id: 3, name: 'Charlie', age: 28, isActive: true, score: 78 }
 // ]
-
 ```
 
-### Question 18: sortUsersByName
-And finally, `sortUsersByName`, which uses the same user objects from the previous function, but sorts by the `name` property instead. This is tricky! The default `.sort` behavior does do alphabetical orders, but you're comparing objects! You can't just use the default behavior, you have to use a callback. Keep your wits about you, and remember how `.sort`'s callback actually sorts things (negative, 0, positive). And of course, do not modify the original array!
+### Problem 5
 
-## Modify
-Looks like someone didn't get the memo about the new array methods in `modify.js`. They've written some code that uses loops. Refactor the code to use the array methods you learned today. Make sure to use the right one though!
+Return the sum of the scores of all users. Do not modify the original array.
 
-Your only guide for this section is the existing code and the tests in `modify.spec.js`. This is very much how real world refactors work, take the opportunity to practice!
+Usage Examples:
+
+```js
+getTotalScore(users); // → 438 (85 + 92 + 78 + 95 + 88)
+```
+
+### Problem 6
+
+Return the first user over with a score above 90. Do not modify the original array.
+
+Usage Examples:
+
+```js
+getFirstHighScorer(users); // →   { id: 2, name: 'Bob', age: 32, isActive: false, score: 92 }
+```
+
+## Bonus Problem
+
+Find the user with id `3`. If the user exists, remove that user from the user's array.
+Otherwise, do nothing. Do not return anything. The original array SHOULD be mutated.
+
+To test this function, remove the `skip` from the test in the spec file.
+
+Usage Examples:
+
+```js
+findUserById3(users); // → undefined (modifies users array to remove Charlie)
+findUserById3([]); // → undefined (does nothing)
+```
