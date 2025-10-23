@@ -4,15 +4,19 @@ For all of the following problems, use an array higher order method to solve the
 
 **Table of Contents**
 - [Setup](#setup)
-- [Easy Problems](#easy-problems)
+- [String Problems](#string-problems)
   - [Problem 1](#problem-1)
   - [Problem 2](#problem-2)
   - [Problem 3](#problem-3)
-- [Medium Problems](#medium-problems)
+- [Number Problems](#number-problems)
   - [Problem 4](#problem-4)
   - [Problem 5](#problem-5)
+- [Object Array Problems](#object-array-problems)
   - [Problem 6](#problem-6)
-- [Bonus Problem](#bonus-problem)
+  - [Problem 7](#problem-7)
+  - [Problem 8](#problem-8)
+  - [Problem 9](#problem-9)
+  - [Problem 10](#problem-10)
 
 ## Setup
 
@@ -22,10 +26,10 @@ Install dependencies
 npm i
 ```
 
-Run tests
+Run the program:
 
 ```sh
-npm t
+node src/from-scratch.js
 ```
 
 After each problem, commit your progress and push to GitHub (main branch is fine!)
@@ -36,109 +40,146 @@ git commit -m "finished problem X"
 git push
 ```
 
-## Easy Problems
+## String Problems
 
-### Problem 1 
-
-Return an array of the lengths of each string in the given array.
-Do not modify the original array.
-
-Usage Examples:
+### Problem 1
 
 ```js
-getStringLengths(['apple', 'banana', 'cherry']); // → [5, 6, 6]
-getStringLengths(['abc', 'de', 'fghi']); // → [3, 2, 4]
-getStringLengths(['']); // → [0]
+const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
+printEveryWord(sampleWords);
+/* Expected Output:
+dog
+blueberry
+alabama
+earth
+football
+*/
 ```
 
 ### Problem 2
-
-Return an array of only the even numbers from the given array of numbers.
-
-Do not modify the original array.
-
-Usage Examples:
-
 ```js
-getEvenNumbers([1, 2, 3, 4, 5, 6]); // → [2, 4, 6]
-getEvenNumbers([1, 3, 5]); // → []
+const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
+console.log(getStringLengths(sampleWords));
+// Expected Output: [ 3, 9, 7, 5, 8 ]
 ```
-
 
 ### Problem 3
-
-Return an array of the squares of only the even numbers from the given array of numbers.
-
-Do not modify the original array.
-
-Usage Examples:
 ```js
-getEvenSquares([1, 2, 3, 4]); // → [4, 16]
-getEvenSquares([1, 3, 5]); // → []
+const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
+sortWordsAlphabetically(sampleWords);
+console.log(sampleWords);
+// Expected Output: [ 'alabama', 'blueberry', 'dog', 'earth', 'football' ]
 ```
 
-## Medium Problems
+## Number Problems
 
-For the following problems, you will be given an array of `user` objects.
-Each user object has the following properties: id, name, age, isActive, and score.
-Do not modify the original array.
+### Problem 4
+
+Write a function called `getEvenNumbers` that takes an array of numbers as input and returns a new array containing only the even numbers from the input array.
 
 Example:
 
 ```js
-const users = [
-  { id: 1, name: 'Alice', age: 25, isActive: true, score: 85 },
-  { id: 2, name: 'Bob', age: 32, isActive: false, score: 92 },
-  { id: 3, name: 'Charlie', age: 28, isActive: true, score: 78 },
-  { id: 4, name: 'Diana', age: 35, isActive: true, score: 95 },
-  { id: 5, name: 'Edward', age: 19, isActive: false, score: 88 }
-];
-```
-
-### Problem 4
-
-Return an array of users who are active and under 30. Do not modify the original array.
-
-Usage Examples:
-
-```js
-getActiveUsersUnder30(users);
-// returns [
-//   { id: 1, name: 'Alice', age: 25, isActive: true, score: 85 },
-//   { id: 3, name: 'Charlie', age: 28, isActive: true, score: 78 }
-// ]
+const sampleNumbers = [7, 3, 9, 1, 4, 8, 2, 10, 5, 6];
+console.log(getEvenNumbers(sampleNumbers));
+// Expected Output: [ 4, 8, 2, 10, 6 ]
 ```
 
 ### Problem 5
 
-Return the sum of the scores of all users. Do not modify the original array.
+Write a function called `getLargestNumber` that takes an array of numbers as input and returns the largest number in the array.
 
-Usage Examples:
+Example:
 
 ```js
-getTotalScore(users); // → 438 (85 + 92 + 78 + 95 + 88)
+const sampleNumbers = [7, 3, 9, 1, 4, 8, 2, 10, 5, 6];
+console.log(getLargestNumber(sampleNumbers));
+// Expected Output: 10
 ```
+
+## Object Array Problems
 
 ### Problem 6
-
-Return the first user over with a score above 90. Do not modify the original array.
-
-Usage Examples:
-
 ```js
-getFirstHighScorer(users); // →   { id: 2, name: 'Bob', age: 32, isActive: false, score: 92 }
+const sampleUsers = [
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+];
+printUserNamesAndScores(sampleUsers);
+/* Expected Output:
+Charlie scored 80 points.
+Edward scored 60 points.
+Bob scored 90 points.
+Diana scored 70 points.
+Alice scored 100 points.
+*/
 ```
 
-## Bonus Problem
-
-Find the user with id `3`. If the user exists, remove that user from the user's array.
-Otherwise, do nothing. Do not return anything. The original array SHOULD be mutated.
-
-To test this function, remove the `skip` from the test in the spec file.
-
-Usage Examples:
-
+### Problem 7
 ```js
-findUserById3(users); // → undefined (modifies users array to remove Charlie)
-findUserById3([]); // → undefined (does nothing)
+const sampleUsers = [
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+];
+console.log(getUserNames(sampleUsers));
+// Expected Output: [ 'Charlie', 'Edward', 'Bob', 'Diana', 'Alice' ]
+```
+
+### Problem 8
+```js
+const sampleUsers = [
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+];
+console.log(getActiveUsersUnder30(sampleUsers));
+/* Expected Output:
+[
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 }
+]
+*/
+```
+
+### Problem 9
+```js
+const sampleUsers = [
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+];
+console.log(getTotalScore(sampleUsers));
+// Expected Output: 400
+```
+
+### Problem 10
+```js
+const sampleUsers = [
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+];
+sortUsersByScoreDescending(sampleUsers);
+console.log(sampleUsers);
+/* Expected Output:
+[
+  { name: 'Alice', isActive: false, age: 28, score: 100 },
+  { name: 'Bob', isActive: true, age: 25, score: 90 },
+  { name: 'Charlie', isActive: true, age: 18, score: 80 },
+  { name: 'Diana', isActive: false, age: 35, score: 70 },
+  { name: 'Edward', isActive: true, age: 30, score: 60 }
+]
+*/
 ```
