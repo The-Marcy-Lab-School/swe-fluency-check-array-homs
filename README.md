@@ -4,6 +4,7 @@ For all of the following problems, use an array higher order method to solve the
 
 **Table of Contents**
 - [Setup](#setup)
+- [Testing](#testing)
 - [String Array Problems](#string-array-problems)
   - [Problem 1](#problem-1)
   - [Problem 2](#problem-2)
@@ -11,7 +12,7 @@ For all of the following problems, use an array higher order method to solve the
 - [Number Array Problems](#number-array-problems)
   - [Problem 4](#problem-4)
   - [Problem 5](#problem-5)
-- [Object Array Array Problems](#object-array-problems)
+- [Object Array Problems](#object-array-problems)
   - [Problem 6](#problem-6)
   - [Problem 7](#problem-7)
   - [Problem 8](#problem-8)
@@ -29,7 +30,7 @@ npm i
 Run the program:
 
 ```sh
-node src/from-scratch.js
+node from-scratch.js
 ```
 
 After each problem, commit your progress and push to GitHub (main branch is fine!)
