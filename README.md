@@ -89,7 +89,7 @@ const sampleWords = ['dog', 'blueberry', 'alabama', 'earth', 'football'];
 
 sortWordsZtoA(sampleWords);
 console.log(sampleWords);
-// Expected Output: [ 'football', 'earth', 'alabama', 'blueberry', 'dog' ]
+// Expected Output: [ 'football', 'earth', 'dog', 'blueberry', 'alabama' ]
 ```
 
 ## Number Array Problems
